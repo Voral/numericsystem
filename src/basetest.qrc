@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>trans/basetest_ru.qm</file>
+        <file>trans/basetest_en.qm</file>
+        <file>ico/icon.png</file>
+    </qresource>
+</RCC>

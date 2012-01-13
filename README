@@ -1,0 +1,17 @@
+~ About:
+
+basesys is simulator "Number system"
+
+~ Features:
+
+* bases 2-36
+* numbers range 0 - 255
+
+~ Need
+
+* Qt 4.7+
+
+~ Availability:
+
+Home Page:	http://va-soft.ru/
+Autor:		Alexander Vorobyev (Voral)
