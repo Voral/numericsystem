@@ -42,7 +42,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="180"/>
         <source>Simualtor &quot;Number systems&quot; for bases between 2 and 36.&lt;br&gt;Version: 1.0&lt;br&gt;2012&lt;br&gt;Autor: Alexander Vorobyev&lt;br&gt;Site: http://va-soft.ru/</source>
-        <translation>Тренажер &quot;Системы счисления&quot; для оснований от 2 до 36.&lt;br&gt;Версия: 1.0&lt;br&gt;2012&lt;br&gt;Автор: Александр Воробьев&lt;br&gt;Сайт: http://va-soft.ru/</translation>
+        <translation>Тренажер &quot;Системы счисления&quot; для оснований от 2 до 36.&lt;br&gt;Версия: 1.0&lt;br&gt;Copyright 2012 Александр Воробьев (voral)&lt;br&gt;Сайт: http://va-soft.ru/</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="207"/>

@@ -42,7 +42,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="180"/>
         <source>Simualtor &quot;Number systems&quot; for bases between 2 and 36.&lt;br&gt;Version: 1.0&lt;br&gt;2012&lt;br&gt;Autor: Alexander Vorobyev&lt;br&gt;Site: http://va-soft.ru/</source>
-        <translation>Simualtor &quot;Number systems&quot; for bases between 2 and 36.&lt;br&gt;Version: 1.0&lt;br&gt;2012&lt;br&gt;Autor: Alexander Vorobyev&lt;br&gt;Site: http://va-soft.ru/</translation>
+        <translation>Simualtor &quot;Number systems&quot; for bases between 2 and 36.&lt;br&gt;Version: 1.0&lt;br&gt;Copyright 2012 Alexander Vorobyev (voral)&lt;br&gt;Site: http://va-soft.ru/</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="207"/>

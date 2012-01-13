@@ -1,3 +1,25 @@
+/********************************************************************************/
+/*                                                                              */
+/*    Copyright 2012 Alexander Vorobyev (Voral)                                 */
+/*    http://va-soft.ru/                                                        */
+/*                                                                              */
+/*    This file is part of basetest.                                            */
+/*                                                                              */
+/*    Basetest is free software: you can redistribute it and/or modify          */
+/*    it under the terms of the GNU General Public License as published by      */
+/*    the Free Software Foundation, either version 3 of the License, or         */
+/*    (at your option) any later version.                                       */
+/*                                                                              */
+/*    Basetest is distributed in the hope that it will be useful,               */
+/*    but WITHOUT ANY WARRANTY; without even the implied warranty of            */
+/*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             */
+/*    GNU General Public License for more details.                              */
+/*                                                                              */
+/*    You should have received a copy of the GNU General Public License         */
+/*    along with basetest.  If not, see <http://www.gnu.org/licenses/>.         */
+/*                                                                              */
+/********************************************************************************/
+
 #include "mainwindow.h"
 #include <QtCore/QDateTime>
 #include <QtCore/QDir>
@@ -160,7 +182,7 @@ void MainWindow::onGenerate()
     int maxLenght = QString::number(this->edRangeMax->maximum(),this->edBaseSource->value()).length();
     for(register int i = 0; i < testItemCount; ++i)
     {
-        unsigned int value = qrand() % this->edRangeMax->value() + this->edRangeMin->value();
+        unsigned int value = qrand() % (this->edRangeMax->value() + 1)+ this->edRangeMin->value();
         QLabel * label = qobject_cast<QLabel *>(this->lSource.at(i));
         label->setText(QString("%1").arg(QString::number(value,this->edBaseSource->value()),maxLenght,'0'));
         label = qobject_cast<QLabel *>(this->lResult.at(i));
@@ -209,7 +231,7 @@ void MainWindow::onCheck()
 }
 void MainWindow::onAbout()
 {
-    QMessageBox::about(this,tr("About Number system"),tr("Simualtor \"Number systems\" for bases between 2 and 36.<br>Version: 1.0<br>2012<br>Autor: Alexander Vorobyev<br>Site: http://va-soft.ru/"));
+    QMessageBox::about(this,tr("About Number system"),tr("Simualtor \"Number systems\" for bases between 2 and 36.<br>Version: 1.0<br>Copyright 2012 Alexander Vorobyev (Voral)<br>Autor: Alexander Vorobyev<br>Site: http://va-soft.ru/"));
 }
 
 void MainWindow::switchLanguage(QAction *action)
@@ -238,11 +260,15 @@ void MainWindow::retranslateUi()
     this->btCheck->adjustSize();
     this->btStop->setFixedWidth(this->btCheck->width());
     //calc max field size
+    QString tSrc, tDst, tErr;
     QLabel * label = qobject_cast<QLabel *>(this->lSource.at(0));
+    tSrc = label->text();
     label->setText(QString("%1").arg(QString::number(this->edRangeMax->maximum(),2),8,'0'));
     label = qobject_cast<QLabel *>(this->lResult.at(0));
+    tErr = label->text();
     label->setText(tr("not checking"));
     QLineEdit *answer = qobject_cast<QLineEdit *>(this->lDestination.at(0));
+    tDst = answer->text();
     answer->setText(QString("%1").arg(QString::number(this->edRangeMax->maximum(),2),8,'0'));
 
     this->gbSettings->adjustSize();
@@ -251,11 +277,11 @@ void MainWindow::retranslateUi()
     this->setMaximumSize(this->size());
 
     label = qobject_cast<QLabel *>(this->lSource.at(0));
-    label->setText("");
+    label->setText(tSrc);
     label = qobject_cast<QLabel *>(this->lResult.at(0));
-    label->setText("");
+    label->setText(tErr);
     answer = qobject_cast<QLineEdit *>(this->lDestination.at(0));
-    answer->setText("");
+    answer->setText(tDst);
     this->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, this->size(), qApp->desktop()->availableGeometry()));
 }
 
