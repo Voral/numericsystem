@@ -107,7 +107,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="305"/>
         <source>Inverse byte order</source>
-        <translation>Обратный порядк битов</translation>
+        <translation>Обратный порядок битов</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="315"/>
