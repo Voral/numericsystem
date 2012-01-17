@@ -41,7 +41,8 @@ HEADERS += mainwindow.h \
     vconfdlg.h
 
 TRANSLATIONS = trans/basetest_ru.ts \
-	trans/basetest_en.ts
+	trans/basetest_en.ts \
+	trans/basetest_cs.ts
 
 RESOURCES = basetest.qrc
 
