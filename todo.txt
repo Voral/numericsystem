@@ -1,4 +1,0 @@
-[+] ru: Опция: инверсия порядка битов для двоичных чисел
-	en: Option: inversion of the order of bits in binary numbers
-[+]	ru: Поддержка многобайтовых чисел и варианты: big-endian и little-endian
-	en: Support for multibyte numbers and options: big-endian and little-endian

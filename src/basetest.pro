@@ -35,10 +35,15 @@ ICON = ./ico/icon.icns
 
 # Input
 SOURCES += main.cpp \
-	mainwindow.cpp
-HEADERS += mainwindow.h
+	mainwindow.cpp \
+    vconfdlg.cpp
+HEADERS += mainwindow.h \
+    vconfdlg.h
 
 TRANSLATIONS = trans/basetest_ru.ts \
 	trans/basetest_en.ts
 
 RESOURCES = basetest.qrc
+
+OTHER_FILES += \
+    history.txt

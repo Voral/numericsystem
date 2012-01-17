@@ -5,7 +5,7 @@ basesys is simulator "Number system"
 ~ Features:
 
 * bases 2-36
-* numbers range 0 - 255
+* numbers range 0 - 35535
 
 ~ Need
 

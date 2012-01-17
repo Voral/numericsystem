@@ -27,7 +27,6 @@
 #include <QtGui/QGroupBox>
 #include <QtGui/QLabel>
 #include <QtGui/QGridLayout>
-#include <QtGui/QSpinBox>
 #include <QtGui/QPushButton>
 #include <QtGui/QLineEdit>
 #include <QtGui/QMenu>
@@ -44,6 +43,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 private:
     void retranslateUi();
+    QString inverse(QString str);
+    int inverseWord(int value);
     QTranslator appTranslator;
     QTranslator qtTranslator;
     QWidget *main;
@@ -57,10 +58,8 @@ private:
     QLabel *lbResultTitle;
     QLabel *lbResultCount;
     QLabel *lbResultPercent;
-    QSpinBox *edBaseSource;
-    QSpinBox *edBaseDestination;
-    QSpinBox *edRangeMin;
-    QSpinBox *edRangeMax;
+    QLabel *lbBinInverse;
+    QLabel *lbEndian;
     QPushButton *btGenerate;
     QPushButton *btCheck;
     QPushButton *btStop;
@@ -69,9 +68,12 @@ private:
     QList <QLabel *> lResult;
     QMenu *mnAbout;
     QMenu *mnLang;
+    QMenu *mnConf;
     QAction *acAboutQt;
     QAction *acAbout;
+    QAction *acConfig;
     QActionGroup *agLang;
+    QActionGroup *agPreset;
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -81,7 +83,10 @@ private slots:
     void onStop();
     void onCheck();
     void onAbout();
-    void switchLanguage(QAction * action);
+    void onConfig();
+    void onUpdatePresets();
+    void onLoadPreset(QAction* action);
+    void switchLanguage(QAction* action);
 };
 
 #endif // MAINWINDOW_H

@@ -21,6 +21,7 @@
 /********************************************************************************/
 #include <QtGui/QApplication>
 #include <QtCore/QTranslator>
+#include <QtCore/QLocale>
 #include "mainwindow.h"
 int main(int argc, char *argv[])
 {
@@ -35,6 +36,6 @@ int main(int argc, char *argv[])
     a.installTranslator(&appTranslator);
     MainWindow w;
     w.show();
-    
+
     return a.exec();
 }
