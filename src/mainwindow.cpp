@@ -20,6 +20,7 @@
 /*                                                                              */
 /********************************************************************************/
 
+#include <ctime>
 #include "mainwindow.h"
 #include <QtCore/QDateTime>
 #include <QtCore/QDir>
@@ -64,7 +65,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QFont ft =  this->font();
     ft.setFamily("Monospace");
-    ft.setStyleHint(QFont::Monospace);
+    ft.setStyleHint(QFont::TypeWriter);
 
     this->laTest = new QGridLayout();
     for(register int i = 0; i < testItemCount; ++i)
@@ -186,7 +187,7 @@ void MainWindow::onGenerate()
     // QT 4.7
     this->lbResultCount->setText("");
     this->lbResultPercent->setText("");
-    qsrand((uint)QDateTime::currentMSecsSinceEpoch());
+    qsrand((uint)time (NULL));
 
     int maxLenght = QString::number((VConfDlg::getRangeMax()<=255) ? 255 : 65535,VConfDlg::getBaseSource()).length();
     for(register int i = 0; i < testItemCount; ++i)
@@ -359,7 +360,7 @@ void MainWindow::onUpdatePresets()
 {
     this->mnConf->clear();
     this->mnConf->addAction(this->acConfig);
-    QSettings cfg(QSettings::IniFormat, QSettings::UserScope,"Voral","basetest",this);
+    QSettings cfg(QSettings::IniFormat, QSettings::UserScope,PROGRAM_NAME,CFG_NAME,this);
     cfg.setIniCodec("UTF-8");
     QStringList presetList = cfg.childGroups();
 

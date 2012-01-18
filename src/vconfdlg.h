@@ -32,6 +32,9 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QPushButton>
 
+#define PROGRAM_NAME	"basetest"
+#define CFG_NAME	"config"
+
 class VConfDlg : public QDialog
 {
     Q_OBJECT

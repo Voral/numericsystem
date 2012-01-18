@@ -112,7 +112,7 @@ VConfDlg::VConfDlg(QWidget *parent) :
 }
 void VConfDlg::onLoad(QString iName)
 {
-    QSettings cfg(QSettings::IniFormat, QSettings::UserScope,"Voral","basetest",0);
+    QSettings cfg(QSettings::IniFormat, QSettings::UserScope,PROGRAM_NAME,CFG_NAME,0);
     cfg.setIniCodec("UTF-8");
     cfg.beginGroup(iName);
     VConfDlg::baseSource = cfg.value("baseSource",VConfDlg::baseSource).toInt();
@@ -132,7 +132,7 @@ void VConfDlg::onSave()
     if (ok && !text.isEmpty())
     {
         this->name = text;
-        QSettings cfg(QSettings::IniFormat, QSettings::UserScope,"Voral","basetest",this);
+        QSettings cfg(QSettings::IniFormat, QSettings::UserScope,PROGRAM_NAME,CFG_NAME,this);
         cfg.setIniCodec("UTF-8");
         cfg.setValue(QString::fromUtf8("%1/baseSource").arg(this->name),this->baseSource);
         cfg.setValue(QString::fromUtf8("%1/baseDestination").arg(this->name),this->baseDestination);
@@ -225,7 +225,7 @@ void VConfDlg::onEndianBigChanged()
 }
 void VConfDlg::onDelete()
 {
-    QSettings cfg(QSettings::IniFormat, QSettings::UserScope,"Voral","basetest",this);
+    QSettings cfg(QSettings::IniFormat, QSettings::UserScope,PROGRAM_NAME,CFG_NAME,this);
     cfg.setIniCodec("UTF-8");
     cfg.remove(this->name);
     VConfDlg::baseSource = 2;
