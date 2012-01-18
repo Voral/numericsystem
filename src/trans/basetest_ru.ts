@@ -160,17 +160,17 @@
     <message>
         <location filename="../vconfdlg.cpp" line="79"/>
         <source>Multibyte</source>
-        <translation>Многобайтовые числа (основания 2 и 16)</translation>
+        <translation>Порядок байт (основания 2 и 16)</translation>
     </message>
     <message>
         <location filename="../vconfdlg.cpp" line="82"/>
         <source>Big-endian</source>
-        <translation></translation>
+        <translation>От старшего к младшему (BE)</translation>
     </message>
     <message>
         <location filename="../vconfdlg.cpp" line="84"/>
         <source>Little-endian</source>
-        <translation></translation>
+        <translation>От младшего к старшему (LE)</translation>
     </message>
     <message>
         <location filename="../vconfdlg.cpp" line="91"/>
