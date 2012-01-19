@@ -1,14 +1,8 @@
-v.1.1 (17.01.2012)
+v.1.2 (20.01.2012)
 ==================
 En:
-[+] Extended the range of numbers to 65535
-[+] Option inverted order of bits in a binary number
-[+] For the base 2 and 16 byte order: big-endian and little-endian
-[+] Save of various presets
+Committing small changes before creating a network features
 
 Ru:
-[+] Расширен диапазон чисел до 65535
-[+] Опция инверсного расположения бит в двоичном числе
-[+] Для чисел с основанием 2 и 16 опция порядка байт: big-endian и little-endian
-[+] Сохранение различных конфигураций
+Фиксирование небольших изменений перед добавлением сетевых возможностей
 

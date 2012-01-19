@@ -25,8 +25,21 @@ TARGET =basetest
 
 DEPENDPATH += .
 DESTDIR = ../bin
+UNAME = $$system(uname -m)
+linux-g++-32 {
+   DESTDIR = ../bin32
+   message(For x86)
+   equals(UNAME,"x86_64"){
+		message(on x86-64 system)
+		LIBS += -L/home/alex/QtSDK32/Desktop/Qt/474/gcc/lib
+   }
+}
+linux-g++-64{
+	message(For x86_64)
+	DESTDIR = ../bin64
+}
 
-QT += core gui 
+QT += core gui
 QT -= phonon
 OBJECTS_DIR += ../.obj
 MOC_DIR += ../.moc
@@ -36,9 +49,9 @@ ICON = ./ico/icon.icns
 # Input
 SOURCES += main.cpp \
 	mainwindow.cpp \
-    vconfdlg.cpp
+	vconfdlg.cpp
 HEADERS += mainwindow.h \
-    vconfdlg.h
+	vconfdlg.h
 
 TRANSLATIONS = trans/basetest_ru.ts \
 	trans/basetest_en.ts \
@@ -47,4 +60,4 @@ TRANSLATIONS = trans/basetest_ru.ts \
 RESOURCES = basetest.qrc
 
 OTHER_FILES += \
-    history.txt
+	history.txt

@@ -1,0 +1,11 @@
+Package: basetest
+Maintainer: Alexander Vorobyev <mvoral@mail.ru>
+Section: science
+Priority: optional
+Description: Simulator Numeber System. Тренажер Системы счисления.
+ The program helps to get the skills to transfer numbers between diff
+ erent number systems (use of systems with a base of 2 to 36).
+ Программа помогает получить навыки по переводу чисел между различным
+ и системами счисления (возможно использование систем с основанием от 2 до 36).
+Depends: libqt4-core (>=4.1.0-1), libqt4-gui (>=4.1.0-1), libc6 (>=2.3)
+

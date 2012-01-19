@@ -33,6 +33,8 @@
 #include <QtEndian>
 #include "vconfdlg.h"
 
+#include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
@@ -134,7 +136,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->agPreset = new QActionGroup(this);
     connect(this->agPreset, SIGNAL(triggered(QAction *)), this, SLOT(onLoadPreset(QAction*)));
-    onUpdatePresets();
+
+    // TODO : remove param
+    // This param is a temporary for compatibility
+    // with older versions. Remove in future versions 1.3 +
+    onUpdatePresets(true);
     retranslateUi();
 }
 
@@ -356,18 +362,46 @@ void MainWindow::retranslateUi()
     this->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, this->size(), qApp->desktop()->availableGeometry()));
 }
 
-void MainWindow::onUpdatePresets()
+void MainWindow::onUpdatePresets(bool checkOld)
 {
+    // TODO : remove param
+    // This method is a temporary param for compatibility
+    // with older versions. Remove in future versions 1.3 +
     this->mnConf->clear();
     this->mnConf->addAction(this->acConfig);
-    QSettings cfg(QSettings::IniFormat, QSettings::UserScope,PROGRAM_NAME,CFG_NAME,this);
-    cfg.setIniCodec("UTF-8");
-    QStringList presetList = cfg.childGroups();
+    QSettings *cfg = new QSettings(QSettings::IniFormat, QSettings::UserScope,PROGRAM_NAME,CFG_NAME,this);
+
+    // TODO : remove code
+    // BEGIN CODE FOR REMOVE:
+    // This code is temporary for compatibility
+    // with older versions. Remove in future versions 1.3 +
+    if (checkOld)
+    {
+        QFileInfo fl(cfg->fileName());
+        if (!fl.exists())
+        {
+            QSettings oldCfg(QSettings::IniFormat, QSettings::UserScope,"Voral","basetest",this);
+            QFile oldFl(oldCfg.fileName());
+            if (oldFl.exists())
+            {
+                QDir dr(fl.absolutePath());
+                dr.mkpath(fl.absolutePath());
+                oldFl.copy(fl.absoluteFilePath());
+                oldFl.remove();
+                delete cfg;
+                cfg = new QSettings(QSettings::IniFormat, QSettings::UserScope,PROGRAM_NAME,CFG_NAME,this);
+            }
+        }
+    }
+    // END CODE FOR REMOVE
+
+    cfg->setIniCodec("UTF-8");
+    QStringList presetList = cfg->childGroups();
 
     if (presetList.count()>0)
     {
         this->mnConf->addSeparator();
-        foreach(QString name, cfg.childGroups())
+        foreach(QString name, cfg->childGroups())
         {
             QAction *action = new QAction(name, this);
             action->setData(name);
@@ -375,6 +409,7 @@ void MainWindow::onUpdatePresets()
             this->agPreset->addAction(action);
         }
     }
+    delete cfg;
 }
 void MainWindow::onLoadPreset(QAction* action)
 {

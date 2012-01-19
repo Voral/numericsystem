@@ -1,4 +1,7 @@
 *.[oa]
+*.deb
+*.rpm
+*.tgz
 moc_*.cpp
 *.*~
 qrc_*.cpp
@@ -7,4 +10,9 @@ basetest.pro.user
 encode.lic
 src/basetest.pro.user.1.3
 bin/*
+bin32/*
+bin64/*
 dist/*
+packages/basetest/DEBIAN/md5sums
+packages/basetest/DEBIAN/control
+packages/basetest/usr/bin/basetest

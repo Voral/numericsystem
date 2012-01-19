@@ -84,7 +84,7 @@ private slots:
     void onCheck();
     void onAbout();
     void onConfig();
-    void onUpdatePresets();
+    void onUpdatePresets(bool checkOld = false);
     void onLoadPreset(QAction* action);
     void switchLanguage(QAction* action);
 };

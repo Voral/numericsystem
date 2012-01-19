@@ -8,10 +8,11 @@ basesys is simulator "Number system"
 * numbers range 0 - 65535
 * inverse bits oredrt (for binary numbers)
 * Endianness: big-endian and little-endian (for base 2 and 16)
+* Localization: Russian, English, Czech
 
 ~ Need
 
-* Qt 4.7+
+* Qt 4.1+
 
 ~ Availability:
 
@@ -21,3 +22,4 @@ Autor:		Alexander Vorobyev (Voral)
 ~ Thanks
 
 Pavel Fric - For Czech translation
+Sciko - for few changes and bug fixes
