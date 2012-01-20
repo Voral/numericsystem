@@ -79,6 +79,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 private slots:
+    void changeEvent(QEvent *event);
     void onGenerate();
     void onStop();
     void onCheck();

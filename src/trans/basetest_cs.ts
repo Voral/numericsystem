@@ -4,128 +4,137 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="39"/>
-        <location filename="../mainwindow.cpp" line="115"/>
+        <location filename="../mainwindow.cpp" line="40"/>
+        <location filename="../mainwindow.cpp" line="120"/>
         <source>English</source>
         <translation>český</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="234"/>
+        <location filename="../mainwindow.cpp" line="42"/>
+        <source>Simulator &quot;Number system&quot;</source>
+        <translation>Simulátor číselných soustav (Number System)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="251"/>
+        <location filename="../mainwindow.cpp" line="260"/>
         <source>Ok</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="269"/>
         <source>%1 from %2</source>
         <translation>%1 z %2</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>%1 %</source>
         <translation>%1 %</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="266"/>
+        <location filename="../mainwindow.cpp" line="275"/>
         <source>About Number system</source>
         <translation>O programu Číselné soustavy</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="266"/>
         <source>Simualtor &quot;Number systems&quot; for bases between 2 and 36.&lt;br&gt;Version: 1.0&lt;br&gt;Copyright 2012 Alexander Vorobyev (Voral)&lt;br&gt;Autor: Alexander Vorobyev&lt;br&gt;Site: http://va-soft.ru/</source>
-        <translation>Simulátor číselných soustav (Number systems) pro základy mezi 2 a 36.&lt;br&gt;Verze: 1.1&lt;br&gt;Autorské právo 2012 Alexander Vorobyev (Voral)&lt;br&gt;Stránky: http://va-soft.ru/</translation>
+        <translation type="obsolete">Simulátor číselných soustav (Number systems) pro základy mezi 2 a 36.&lt;br&gt;Verze: 1.1&lt;br&gt;Autorské právo 2012 Alexander Vorobyev (Voral)&lt;br&gt;Stránky: http://va-soft.ru/</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../mainwindow.cpp" line="276"/>
+        <source>%1 for bases between 2 and 36.&lt;br&gt;Version: %2&lt;br&gt;Copyright 2012 Alexander Vorobyev (Voral)&lt;br&gt;Autor: Alexander Vorobyev&lt;br&gt;Site: http://va-soft.ru/</source>
+        <translation>%1 pro základy mezi 2 a 36.&lt;br&gt;Verze: %2&lt;br&gt;Autorské právo 2012 Alexander Vorobyev (Voral)&lt;br&gt;Stránky: http://va-soft.ru/</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="318"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="289"/>
+        <location filename="../mainwindow.cpp" line="319"/>
         <source>Preset</source>
         <translation>Přednastavení</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>About &amp;Qt...</source>
         <translation>O &amp;Qt...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
+        <location filename="../mainwindow.cpp" line="321"/>
         <source>About...</source>
         <translation>O programu...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="292"/>
+        <location filename="../mainwindow.cpp" line="322"/>
         <source>Preset...</source>
         <translation>Přednastavení...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="293"/>
+        <location filename="../mainwindow.cpp" line="323"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="294"/>
+        <location filename="../mainwindow.cpp" line="324"/>
         <source>Stop</source>
         <translation>Zastavit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="325"/>
         <source>Check</source>
         <translation>Ověřit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="296"/>
+        <location filename="../mainwindow.cpp" line="326"/>
         <source>Result:</source>
         <translation>Výsledek:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="297"/>
+        <location filename="../mainwindow.cpp" line="327"/>
         <source>Start</source>
         <translation>Spustit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="328"/>
         <source>Bases (source/destination): &lt;b&gt;%1 / %2&lt;/b&gt;</source>
         <translation>Základy (zdroj/cíl): &lt;b&gt;%1 / %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="301"/>
+        <location filename="../mainwindow.cpp" line="331"/>
         <source>Numbers range (min/max): &lt;b&gt;%1 / %2&lt;/b&gt;</source>
         <translation>Číselný rozsah (min/max): &lt;b&gt;%1 / %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="305"/>
+        <location filename="../mainwindow.cpp" line="335"/>
         <source>Inverse byte order</source>
         <translation>Obrácené pořadí bajtů</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="315"/>
+        <location filename="../mainwindow.cpp" line="345"/>
         <source>Endianness: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Endian: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="318"/>
+        <location filename="../mainwindow.cpp" line="348"/>
         <source>Test</source>
         <translation>Zkouška</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="319"/>
+        <location filename="../mainwindow.cpp" line="349"/>
         <source>Number system</source>
         <translation>Číselná soustava</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="335"/>
+        <location filename="../mainwindow.cpp" line="365"/>
         <source>not checking</source>
         <translation>neověřeno</translation>
     </message>

@@ -29,10 +29,6 @@ UNAME = $$system(uname -m)
 linux-g++-32 {
    DESTDIR = ../bin32
    message(For x86)
-   equals(UNAME,"x86_64"){
-		message(on x86-64 system)
-		LIBS += -L/home/alex/QtSDK32/Desktop/Qt/474/gcc/lib
-   }
 }
 linux-g++-64{
 	message(For x86_64)
@@ -54,7 +50,6 @@ HEADERS += mainwindow.h \
 	vconfdlg.h
 
 TRANSLATIONS = trans/basetest_ru.ts \
-	trans/basetest_en.ts \
 	trans/basetest_cs.ts
 
 RESOURCES = basetest.qrc

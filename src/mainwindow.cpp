@@ -33,13 +33,15 @@
 #include <QtEndian>
 #include "vconfdlg.h"
 
-#include <QDebug>
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
     // For lang menu
     tr("English");
+    qApp->setApplicationVersion("1.3");
+    qApp->setApplicationName(tr("Simulator \"Number system\""));
+    appTranslator.load("basetest_" + QLocale::system().name().left(2),":/trans");
+    qtTranslator.load("basetest_" + QLocale::system().name().left(2),":/trans");
     qApp->installTranslator(&appTranslator);
     qApp->installTranslator(&qtTranslator);
     this->main =new QWidget(this);
@@ -108,6 +110,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this->agLang, SIGNAL(triggered(QAction *)), this, SLOT(switchLanguage(QAction *)));
     QDir dir(":/trans");
     QStringList fileNames = dir.entryList(QStringList("basetest_*.qm"));
+    QAction *action = new QAction("English", this);
+    action->setCheckable(true);
+    action->setData("en");
+    this->mnLang->addAction(action);
+    this->agLang->addAction(action);
+    if (QLocale::system().name().left(2).compare("en") == 0) action->setChecked(true);
     for (int i = 0; i < fileNames.size(); ++i)
     {
         QString locale = fileNames[i];
@@ -270,7 +278,11 @@ void MainWindow::onCheck()
 }
 void MainWindow::onAbout()
 {
-    QMessageBox::about(this,tr("About Number system"),tr("Simualtor \"Number systems\" for bases between 2 and 36.<br>Version: 1.0<br>Copyright 2012 Alexander Vorobyev (Voral)<br>Autor: Alexander Vorobyev<br>Site: http://va-soft.ru/"));
+    QMessageBox::about(this,tr("About Number system"),
+                       tr("%1 for bases between 2 and 36.<br>Version: %2<br>"
+                          "Copyright 2012 Alexander Vorobyev (Voral)<br>Autor: Alexander Vorobyev<br>Site: http://va-soft.ru/")
+                       .arg(qApp->applicationName())
+                       .arg(qApp->applicationVersion()));
 }
 void MainWindow::onConfig()
 {
@@ -280,13 +292,30 @@ void MainWindow::onConfig()
     this->retranslateUi();
     dlg->deleteLater();
 }
+void MainWindow::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        this->retranslateUi();
+    }
+    else
+    {
+         QWidget::changeEvent(event);
+    }
+}
 
 void MainWindow::switchLanguage(QAction *action)
 {
     QString locale = action->data().toString();
-    appTranslator.load("basetest_" + locale, ":/trans");
-    qtTranslator.load("qt_" + locale, ":/trans");
-    retranslateUi();
+    qApp->removeTranslator(&appTranslator);
+    qApp->removeTranslator(&qtTranslator);
+    if (locale.compare("en")!=0)
+    {
+        qApp->installTranslator(&appTranslator);
+        qApp->installTranslator(&qtTranslator);
+        appTranslator.load("basetest_" + locale, ":/trans");
+        qtTranslator.load("qt_" + locale, ":/trans");
+    }
 }
 void MainWindow::retranslateUi()
 {
@@ -425,3 +454,4 @@ QString MainWindow::inverse(QString str)
     }
     return result;
 }
+
