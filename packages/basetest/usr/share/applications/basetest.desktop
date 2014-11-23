@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=Simulator Number System
-Name[ru]=Тренажер Системы счисления
-GenericName=Simulator Number System
-GenericName[ru]=Тренажер Системы счисления
-Comment=Simulator Number System
-Comment[ru]=Тренажер Системы счисления
+Name=Number Systems
+Name[ru]=Системы счисления
+GenericName=Simulator "Number Systems"
+GenericName[ru]=Тренажер "Системы счисления"
+Comment=Transfer numbers between different number systems
+Comment[ru]=Перевод чисел между различными системами счисления
 Exec=basetest
 Icon=basetest
 StartupNotify=true
 Terminal=false
 Type=Application
-Categories=Education;
+Categories=Education;Science;Math;
