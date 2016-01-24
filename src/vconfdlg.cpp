@@ -21,8 +21,8 @@
 /********************************************************************************/
 #include "vconfdlg.h"
 #include <QtCore/QSettings>
-#include <QtGui/QApplication>
-#include <QtGui/QInputDialog>
+#include <QApplication>
+#include <QInputDialog>
 
 int VConfDlg::maxRangeValue = 65535;
 int VConfDlg::baseSource = 2;

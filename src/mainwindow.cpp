@@ -25,11 +25,11 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QDir>
 #include <QtCore/QSettings>
-#include <QtGui/QMenuBar>
-#include <QtGui/QApplication>
-#include <QtGui/QMessageBox>
-#include <QtGui/QStyle>
-#include <QtGui/QDesktopWidget>
+#include <QMenuBar>
+#include <QApplication>
+#include <QMessageBox>
+#include <QStyle>
+#include <QDesktopWidget>
 #include <QtEndian>
 #include "vconfdlg.h"
 

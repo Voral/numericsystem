@@ -22,15 +22,15 @@
 #ifndef VCONFDLG_H
 #define VCONFDLG_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QGroupBox>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QSpinBox>
-#include <QtGui/QCheckBox>
-#include <QtGui/QRadioButton>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QPushButton>
+#include <QDialog>
+#include <QGroupBox>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QSpinBox>
+#include <QCheckBox>
+#include <QRadioButton>
+#include <QHBoxLayout>
+#include <QPushButton>
 
 #define PROGRAM_NAME	"basetest"
 #define CFG_NAME	"config"
