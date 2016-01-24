@@ -32,18 +32,20 @@
 #include <QDesktopWidget>
 #include <QtEndian>
 #include "vconfdlg.h"
+#include <QLibraryInfo>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
+    appTranslator.load("basetest_" + QLocale::system().name().left(2),":/trans");
+    qtTranslator.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qApp->installTranslator(&appTranslator);
+    qApp->installTranslator(&qtTranslator);
+
     // For lang menu
     tr("English");
     qApp->setApplicationVersion("1.3");
-    qApp->setApplicationName(tr("Simulator \"Number system\""));
-    appTranslator.load("basetest_" + QLocale::system().name().left(2),":/trans");
-    qtTranslator.load("basetest_" + QLocale::system().name().left(2),":/trans");
-    qApp->installTranslator(&appTranslator);
-    qApp->installTranslator(&qtTranslator);
+
     this->main =new QWidget(this);
     this->gbSettings = new QGroupBox();
     this->gbTest = new QGroupBox();
@@ -314,11 +316,13 @@ void MainWindow::switchLanguage(QAction *action)
         qApp->installTranslator(&appTranslator);
         qApp->installTranslator(&qtTranslator);
         appTranslator.load("basetest_" + locale, ":/trans");
-        qtTranslator.load("qt_" + locale, ":/trans");
+        qtTranslator.load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     }
 }
 void MainWindow::retranslateUi()
 {
+    qApp->setApplicationName(tr("Simulator \"Number system\""));
+
     this->setMaximumSize(this->width()+100,this->height()+10);
 
     this->mnAbout->setTitle(tr("About"));
