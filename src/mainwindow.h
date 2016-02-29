@@ -22,16 +22,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtGui/QMainWindow>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QLabel>
-#include <QtGui/QGridLayout>
-#include <QtGui/QPushButton>
-#include <QtGui/QLineEdit>
-#include <QtGui/QMenu>
-#include <QtGui/QAction>
-#include <QtGui/QActionGroup>
+#include <QMainWindow>
+#include <QVBoxLayout>
+#include <QGroupBox>
+#include <QLabel>
+#include <QGridLayout>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QMenu>
+#include <QAction>
+#include <QActionGroup>
 #include <QtCore/QList>
 #include <QtCore/QTranslator>
 
